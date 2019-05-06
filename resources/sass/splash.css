@@ -1,0 +1,105 @@
+@-webkit-keyframes slideInFadeIn {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(10%);
+    -moz-transform: translateY(10%);
+    -ms-transform: translateY(10%);
+    -o-transform: translateY(10%);
+    transform: translateY(10%); }
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    -moz-transform: none;
+    -ms-transform: none;
+    -o-transform: none;
+    transform: none; } }
+@-moz-keyframes slideInFadeIn {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(10%);
+    -moz-transform: translateY(10%);
+    -ms-transform: translateY(10%);
+    -o-transform: translateY(10%);
+    transform: translateY(10%); }
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    -moz-transform: none;
+    -ms-transform: none;
+    -o-transform: none;
+    transform: none; } }
+@-ms-keyframes slideInFadeIn {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(10%);
+    -moz-transform: translateY(10%);
+    -ms-transform: translateY(10%);
+    -o-transform: translateY(10%);
+    transform: translateY(10%); }
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    -moz-transform: none;
+    -ms-transform: none;
+    -o-transform: none;
+    transform: none; } }
+@keyframes slideInFadeIn {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(10%);
+    -moz-transform: translateY(10%);
+    -ms-transform: translateY(10%);
+    -o-transform: translateY(10%);
+    transform: translateY(10%); }
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    -moz-transform: none;
+    -ms-transform: none;
+    -o-transform: none;
+    transform: none; } }
+.splash {
+  position: relative;
+  height: 100vh; }
+  .splash .background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: url("/mi-chat/resources/images/splash-background.jpg") center no-repeat;
+    background-size: cover; }
+    .splash .background::before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.5); }
+  .splash .absolute-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; }
+    .splash .absolute-center .text {
+      color: #F5f5f5;
+      margin-bottom: 30px; }
+    .splash .absolute-center .buttons {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: center; }
+      .splash .absolute-center .buttons button {
+        margin: 0 30px; }
+
+/*# sourceMappingURL=splash.css.map */

@@ -1,0 +1,48 @@
+@import 'toolbox';
+
+// Body
+$accent: #f44336;
+$accent-hover: rgba(0, 0, 0, 0.12);
+$background: #303030;
+$background-elevation-1: #424242;
+$background-elevation-2: #545454;
+$background-hover: rgba(255, 255, 255, 0.12);
+$text-color: #fff;
+$text-color-accent: #F5f5f5;
+
+// Animations
+$animation-ease: cubic-bezier(0.4, 0.0, 0.2, 1);
+$animation-ease-exit: cubic-bezier(0.4, 0.0, 1, 1);
+$animation-ease-enter: cubic-bezier(0.0, 0.0, 0.2, 1);
+
+// Typography
+$font-family-sans-serif: 'Nunito', sans-serif;
+$font-size-base: 0.9rem;
+$line-height-base: 1.6;
+
+// Colors
+$blue: #3490dc;
+$indigo: #6574cd;
+$purple: #9561e2;
+$pink: #f66D9b;
+$red: #e3342f;
+$orange: #f6993f;
+$yellow: #ffed4a;
+$green: #38c172;
+$teal: #4dc0b5;
+$cyan: #6cb2eb;
+
+$spacing: 15px;
+$spacing-sm: 8px;
+
+@include keyframes(slideInFadeIn) {
+    from {
+        opacity: 0;
+        @include transform(translateY(10%))
+    }
+
+    to {
+        opacity: 1;
+        @include transform(none)
+    }
+}

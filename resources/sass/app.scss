@@ -1,0 +1,464 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,700');
+// Variables
+@import 'variables';
+@import 'toolbox';
+
+html {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background-color: $background;
+    color: $text-color;
+    height: 100%;
+
+    body {
+        position: relative;
+        min-height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: stretch;
+        align-items: stretch;
+
+        .content {
+            flex: 1;
+        }
+    }
+
+    * {
+        font-family: $font-family-sans-serif;
+        color: $text-color;
+    }
+
+    @media (max-width: 767px) {
+
+        .container {
+            width: 100%;
+            max-width: 100%;
+            padding-right: 15px;
+            padding-left: 15px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+    }
+
+    $header-size: 48px;
+
+    button {
+
+        &.btn {
+            position: relative;
+            overflow: hidden;
+            background: none;
+            border: none;
+            outline: none;
+            border-radius: 4px;
+            min-width: 64px;
+            min-height: 36px;
+            padding: 0 16px;
+            font-weight: bolder;
+            cursor: pointer;
+            @include transition(background $animation-ease 200ms);
+
+            &.accent {
+                color: $text-color-accent;
+                border: 2px solid $accent;
+
+                &.inverse {
+                    color: $text-color;
+                }
+            }
+
+            &.primary {
+                color: $text-color-accent;
+                border: 2px solid $accent;
+                background: $accent;
+
+                &::after {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    bottom: 0;
+                    right: 0;
+                }
+
+                &:hover::after {
+                    background: $background-hover;
+                }
+            }
+
+            &.flat {
+                border: none;
+                background: none;
+            }
+
+            &.circle {
+                border-radius: 50%;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                padding: 8px;
+                min-width: auto;
+            }
+
+            &:hover:not(.primary) {
+                background: $background-hover;
+            }
+
+            &:focus, &:active, &:active:focus {
+                outline: none;
+            }
+
+            &.disabled{
+                pointer-events: none;
+                opacity: 0.4;
+            }
+        }
+    }
+
+    input[type="text"], input[type="search"], input[type="email"], input[type="password"] {
+        border: 1px solid $background-hover;
+        border-radius: 4px;
+        background: $background-elevation-2;
+        padding: 8px 16px;
+        outline: none;
+        @include transition(border $animation-ease 200ms);
+
+        &:focus {
+            border-color: $accent;
+        }
+    }
+
+    input[type="file"] {
+        opacity: 0;
+        position: absolute;
+        z-index: -1;
+        width: 1px !important;
+        height: 1px !important;
+
+        & + label {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 4px;
+            color: #fff;
+            border: 2px solid $accent;
+            background: $accent;
+            padding: 0 16px;
+            outline: none;
+            font-weight: bolder;
+            cursor: pointer;
+            min-width: 64px;
+            min-height: 36px;
+
+            &::after {
+                content: '';
+                display: block;
+                position: absolute;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+            }
+
+            &:hover::after {
+                background: $accent-hover;
+            }
+        }
+    }
+
+    input[type="checkbox"] {
+        opacity: 0;
+        position: absolute;
+        z-index: -1;
+        width: 1px !important;
+        height: 1px !important;
+
+        & + label {
+            position: relative;
+            border-radius: 4px;
+            border: 2px solid $accent;
+            background: transparent;
+            outline: none;
+            font-weight: bolder;
+            cursor: pointer;
+            width: 20px;
+            height: 20px;
+            margin: 2px;
+        }
+
+        &:checked + label {
+            background: $accent;
+
+            &::after {
+                content: '';
+                display: block;
+                position: absolute;
+                top: 23%;
+                left: 17%;
+                width: 60%;
+                height: 40%;
+                border-left: 2px solid;
+                border-bottom: 2px solid;
+                border-color: $text-color-accent;
+                @include transform(rotate(-45deg));
+            }
+        }
+
+        &.disabled {
+            pointer-events: none;
+        }
+
+        &.disabled + label {
+            opacity: 0.4;
+            pointer-events: none;
+        }
+    }
+
+    a {
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: none;
+            opacity: 0.5;
+            color: $text-color;
+        }
+    }
+
+    .progress-bar {
+        position: relative;
+        border: 2px solid $accent;
+        border-radius: 4px;
+        overflow: hidden;
+        z-index: 25;
+
+        .bar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            height: 100%;
+            width: 0;
+            background: $accent;
+            @include transition(width $animation-ease 200ms);
+        }
+    }
+
+    .card {
+        position: relative;
+        background: $background-elevation-1;
+        border-radius: 4px;
+        overflow: hidden;
+        padding: $spacing;
+        @include elevation-1;
+
+        .tool-bar {
+            border-bottom: 1px solid $background-hover;
+            padding-bottom: $spacing;
+
+            @media screen and (max-width: 767px) {
+                padding-bottom: $spacing-sm;
+            }
+        }
+    }
+
+    .form {
+        display: flex;
+        flex-direction: column;
+        justify-content: stretch;
+        align-items: stretch;
+
+        .form-group {
+            margin-bottom: 15px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        .error-messages {
+            font-size: 14px;
+            color: rgba(255, 0, 0, 0.7);
+
+            &:not(:last-child) {
+                margin-bottom: 15px;
+            }
+        }
+    }
+
+    body {
+        background-color: $background;
+    }
+
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        height: $header-size;
+        background-color: $accent;
+        z-index: 20;
+        @include elevation-1();
+
+        .title {
+            color: #f5f5f5;
+            margin-bottom: 0;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            cursor: pointer;
+        }
+
+        .menu {
+            color: #f5f5f5;
+        }
+
+        a {
+            text-decoration: none !important;
+
+            * {
+                text-decoration: none !important;
+            }
+        }
+    }
+
+    .content {
+        margin-top: $header-size;
+
+        main {
+            padding: 15px 0;
+        }
+    }
+
+    .dialog-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 25;
+        background: rgba(0, 0, 0, 0.5);
+        opacity: 1;
+        @include transition(opacity $animation-ease 200ms);
+
+        &:not(.active) {
+            opacity: 0;
+        }
+
+        $title-bar-size: 48px;
+
+        .dialog {
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            top: 50%;
+            left: 50%;
+            background-color: $background-elevation-1;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-top: 0;
+            min-width: 300px;
+            max-width: 75%;
+            max-height: 75%;
+            @include transition(margin-top $animation-ease 200ms);
+            @include transform(translate(-50%, -50%));
+            @include elevation-1();
+
+            &:not(.opened) {
+                margin-top: 50px;
+            }
+
+            .title-bar {
+                background: $accent;
+                margin: 0;
+                color: $text-color-accent;
+                flex: 0 0 auto;
+
+                & > * {
+                    margin: 10px;
+                }
+
+                .title {
+                    font-size: 1.17em;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+
+                .controls {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: flex-end;
+                    align-items: center;
+                }
+            }
+
+            .close {
+                cursor: pointer;
+            }
+
+            .save {
+                float: right;
+            }
+
+            .dialog-content {
+                flex: 1;
+                padding: 15px;
+                overflow-x: hidden;
+                overflow-y: auto;
+
+                &::-webkit-scrollbar {
+                    width: 6px;
+                }
+
+                &::-webkit-scrollbar-track {
+                    background: transparent;
+                }
+
+                &::-webkit-scrollbar-thumb {
+                    background: rgba(255, 107, 107, 0.5);
+                    border-radius: 3px;
+                }
+
+                &::-webkit-scrollbar-thumb:hover {
+                    background: rgba(255, 107, 107, 1);
+                }
+            }
+
+            @media (max-width: 767px) {
+                max-width: 95%;
+                max-height: 95%;
+            }
+        }
+    }
+
+    body:not(.loaded) {
+        header {
+            @include transform(translateY(-100%));
+        }
+
+        .content {
+            opacity: 0;
+        }
+    }
+
+    body.loaded {
+        header {
+            @include transform(none);
+            @include transition(transform $animation-ease-enter 400ms)
+        }
+
+        .content {
+            opacity: 1;
+            @include transition(opacity $animation-ease-enter 400ms)
+        }
+    }
+
+}

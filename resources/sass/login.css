@@ -1,0 +1,110 @@
+@-webkit-keyframes slideInFadeIn {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(10%);
+    -moz-transform: translateY(10%);
+    -ms-transform: translateY(10%);
+    -o-transform: translateY(10%);
+    transform: translateY(10%); }
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    -moz-transform: none;
+    -ms-transform: none;
+    -o-transform: none;
+    transform: none; } }
+@-moz-keyframes slideInFadeIn {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(10%);
+    -moz-transform: translateY(10%);
+    -ms-transform: translateY(10%);
+    -o-transform: translateY(10%);
+    transform: translateY(10%); }
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    -moz-transform: none;
+    -ms-transform: none;
+    -o-transform: none;
+    transform: none; } }
+@-ms-keyframes slideInFadeIn {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(10%);
+    -moz-transform: translateY(10%);
+    -ms-transform: translateY(10%);
+    -o-transform: translateY(10%);
+    transform: translateY(10%); }
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    -moz-transform: none;
+    -ms-transform: none;
+    -o-transform: none;
+    transform: none; } }
+@keyframes slideInFadeIn {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(10%);
+    -moz-transform: translateY(10%);
+    -ms-transform: translateY(10%);
+    -o-transform: translateY(10%);
+    transform: translateY(10%); }
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    -moz-transform: none;
+    -ms-transform: none;
+    -o-transform: none;
+    transform: none; } }
+.login {
+  position: relative;
+  height: 100vh; }
+  .login .background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: url("/mi-chat/resources/images/splash-background.jpg") center no-repeat;
+    background-size: cover; }
+    .login .background::before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.5); }
+  .login .absolute-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; }
+    .login .absolute-center.card {
+      padding: 32px;
+      width: 300px; }
+      .login .absolute-center.card form {
+        width: 100%; }
+        .login .absolute-center.card form .form-group {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start; }
+          .login .absolute-center.card form .form-group input {
+            align-self: stretch;
+            margin-bottom: .5rem; }
+        .login .absolute-center.card form .submit {
+          float: right;
+          align-self: flex-end; }
+
+/*# sourceMappingURL=login.css.map */
